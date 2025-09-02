@@ -279,3 +279,92 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+// Project Filtering System
+document.addEventListener('DOMContentLoaded', function() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectsGrid = document.querySelector('.projects-grid');
+    
+    // Initialize all projects as visible
+    projectCards.forEach(card => {
+        card.classList.add('visible');
+        card.classList.remove('hidden');
+    });
+    
+    // Add click event listeners to filter tabs
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Remove active class from all tabs
+            filterTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Filter projects
+            filterProjects(filterValue);
+        });
+    });
+    
+    function filterProjects(filter) {
+        let visibleCount = 0;
+        
+        projectCards.forEach((card, index) => {
+            const cardFilter = card.getAttribute('data-filter');
+            
+            if (filter === 'all' || cardFilter === filter) {
+                // Show project card
+                card.classList.remove('hidden');
+                card.classList.add('visible');
+                visibleCount++;
+                
+                // Add delay for staggered animation
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, index * 100);
+            } else {
+                // Hide project card
+                card.classList.remove('visible');
+                card.classList.add('hidden');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+            }
+        });
+        
+        // Update grid layout if needed
+        if (visibleCount === 0) {
+            projectsGrid.style.minHeight = '200px';
+        } else {
+            projectsGrid.style.minHeight = 'auto';
+        }
+        
+        // Add smooth scrolling to projects section when filtering
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+            setTimeout(() => {
+                projectsSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300);
+        }
+    }
+    
+    // Add hover effects for filter tabs
+    filterTabs.forEach(tab => {
+        tab.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(-2px)';
+            }
+        });
+        
+        tab.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(0)';
+            }
+        });
+    });
+});

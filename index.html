@@ -349,8 +349,29 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- Project Filter Tabs -->
+            <div class="project-filters">
+                <button class="filter-tab active" data-filter="all">
+                    <i class="fas fa-th-large"></i>
+                    All Projects
+                </button>
+                <button class="filter-tab" data-filter="react-native">
+                    <i class="fab fa-react"></i>
+                    React Native
+                </button>
+                <button class="filter-tab" data-filter="nextjs">
+                    <i class="fab fa-node-js"></i>
+                    Next.js
+                </button>
+                <!-- <button class="filter-tab" data-filter="web">
+                    <i class="fas fa-globe"></i>
+                    Web Development
+                </button> -->
+            </div>
+            
             <div class="projects-grid">
-                <div class="project-card" data-project="bookmycargo-driver">
+                <div class="project-card" data-project="bookmycargo-driver" data-filter="react-native">
                     <div class="project-image">
                         <img src="./img/bmc.jpg" alt="Bookmycargo Driver App" class="project-img">
                         <div class="project-overlay">
@@ -374,7 +395,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-project="your-barber">
+                <div class="project-card" data-project="your-barber" data-filter="react-native">
                     <div class="project-image">
                         <img src="./img/barber.webp" alt="Your Barber App" class="project-img">
                         <div class="project-overlay">
@@ -398,7 +419,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-project="bookmycargo-customer">
+                <div class="project-card" data-project="bookmycargo-customer" data-filter="react-native">
                     <div class="project-image">
                         <img src="./img/bmcbanner1.jpeg" alt="Bookmycargo Customer App" class="project-img">
                         <div class="project-overlay">
@@ -422,7 +443,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-project="yangon-cab">
+                <div class="project-card" data-project="yangon-cab" data-filter="react-native">
                     <div class="project-image">
                         <img src="./img/bmcbanner2.jpeg" alt="Yangon Cab Services" class="project-img">
                         <div class="project-overlay">
@@ -446,7 +467,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-project="rca-research">
+                <div class="project-card" data-project="rca-research" data-filter="react-native">
                     <div class="project-image">
                         <img src="./img/rhive_logo_new.png" alt="RCA Research App" class="project-img">
                         <div class="project-overlay">
@@ -470,7 +491,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-project="korent-app">
+                <div class="project-card" data-project="korent-app" data-filter="react-native">
                     <div class="project-image">
                         <img src="./img/woocommerce.png" alt="Korent App" class="project-img">
                         <div class="project-overlay">
@@ -493,6 +514,151 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Next.js Projects -->
+                <div class="project-card" data-project="ghumakkad-travel" data-filter="nextjs">
+                    <div class="project-image">
+                        <img src="./img/ghumakkad-banner.png" alt="Ghumakkad Travel Website" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://ghumakkad-ashy.vercel.app/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ghumakkad Travel Website</h3>
+                        <p class="project-description">
+                            A comprehensive travel booking platform built with Next.js and shadcn UI, featuring hotel accommodations, travel guides, vehicle rentals, and customizable travel packages with check-in/check-out date selection.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">shadcn UI</span>
+                            <span class="tech-tag">Travel Booking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="tripkhabri" data-filter="nextjs">
+                    <div class="project-image">
+                        <img src="./img/trip-khabri.png" alt="Tripkhabri Travel Website" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://tripkhabri.com/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Trip khabri</h3>
+                        <p class="project-description">
+                            Explore Jaipur's majestic forts, hidden gems, and cultural treasures. Join unforgettable adventures with fun activities, delicious food, and memories that last forever.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">tailwind css</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="bawarchiindian" data-filter="nextjs">
+                    <div class="project-image">
+                        <img src="./img/bawarchi.png" alt="Bawarchi Indian Website" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://bawarchiindian.com/bawarchi-dishoom/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bawarchi Indian</h3>
+                        <p class="project-description">
+                            We've been serving Bangkok authentic Indian cuisine since 1999, and for nearly three decades, we've remained the table locals trust, tourists hunt for, and food lovers return to again and again.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">tailwind css</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="regalfalcon" data-filter="nextjs">
+                    <div class="project-image">
+                        <img src="./img/regalbanner.png" alt="Regal Falcon" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Regal Falcon (Coming Soon)</h3>
+                        <p class="project-description">
+                            A premium fashion e-commerce platform with full-stack capabilities. Features admin panel for product management, category creation, and content posting. Built with Next.js frontend and Node.js + MongoDB backend.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">shadcn UI</span>
+                        </div>
+                    </div>
+                </div>
+         
+                <!-- Web Development Projects -->
+                <!-- <div class="project-card" data-project="restaurant-website" data-filter="web">
+                    <div class="project-image">
+                        <img src="./img/barber.webp" alt="Restaurant Website" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Restaurant Website</h3>
+                        <p class="project-description">
+                            A responsive restaurant website with online menu, reservation system, and contact information.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="landing-page" data-filter="web">
+                    <div class="project-image">
+                        <img src="./img/bmcbanner1.jpeg" alt="Landing Page" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Landing Page</h3>
+                        <p class="project-description">
+                            A high-converting landing page for a SaaS product with modern design and optimized user experience.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">AOS Animations</span>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </section>

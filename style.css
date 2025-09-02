@@ -707,14 +707,18 @@ body {
 
 /* Projects Section */
 .projects {
-    padding: 120px 0;
-    background: #ffffff;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    gap: 2rem;
+    margin-top: 2rem;
+    min-height: auto;
+    transition: all 0.3s ease;
 }
 
 .project-card {
@@ -1646,5 +1650,128 @@ body {
     .project-card,
     .contact-form {
         padding: 25px;
+    }
+}
+
+/* Project Filters */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.filter-tab:hover::before {
+    left: 100%;
+}
+
+.filter-tab:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.filter-tab.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+.filter-tab i {
+    font-size: 1rem;
+}
+
+/* Project Card Filtering - Fixed Layout */
+.project-card {
+    transition: all 0.4s ease;
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+    will-change: opacity, transform;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    display: none;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    display: block;
+}
+
+/* Responsive adjustments for filter tabs */
+@media (max-width: 768px) {
+    .project-filters {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .filter-tab {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .filter-tab i {
+        font-size: 0.9rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .filter-tab {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
